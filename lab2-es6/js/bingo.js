@@ -53,6 +53,10 @@ export default class Bingo {
     // let card = new Card(this.cards[i]);
     // render the card
     // card.render();
+    for (let i = 0; i < this.cards.length; i++){ //https://www.w3schools.com/js/js_loop_for.asp
+        let card = new Card(this.cards[i]);
+        card.render(i);
+      }
   }
 
   static checkWinner() {
