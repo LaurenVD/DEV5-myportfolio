@@ -70,6 +70,11 @@ export default class Bingo {
     // show the animated gif to the winner
     // document.querySelector(".bingo__overlay").style.display = "block";
     // }
+
+    let cardsDone = document.querySelectorAll(".bingo__card--done");
+    if (cardsDone.length === 5) {
+      document.querySelector(".bingo__overlay").style.display = "block";
+    }
   }
 
   static save() {
