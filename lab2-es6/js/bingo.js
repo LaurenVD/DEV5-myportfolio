@@ -96,14 +96,15 @@ export default class Bingo {
 
     let cards = document.querySelectorAll(".bingo__card--done");
 
+    for (let i = 0; i < cards.length; i++) {
+      cardsWon.push(cards[i].dataset.number);
+    }
+
     if (cards.length === 0) {
       localStorage.removeItem("bingo");
-    } else {
-      for (let i = 0; i < cards.length; i++) {
-        cardsWon.push(cards[i].dataset.card);
-      }
-      localStorage.setItem("bingo", JSON.stringify(cardsWon));
     }
+
+    localStorage.setItem("bingo", JSON.stringify(cardsWon)); //https://www.geeksforgeeks.org/javascript-json-stringify-method/
   }
 
   static load() {
