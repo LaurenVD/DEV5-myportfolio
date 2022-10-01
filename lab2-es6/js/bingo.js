@@ -94,14 +94,14 @@ export default class Bingo {
     // save a selection like [1, 7, 8] to localstorage item "bingo"
     // you might want to check out how JSON.stringify() works
 
-    let cards = document.querySelectorAll(".bingo__card--done");
+    let finishedCards = document.querySelectorAll(".bingo__card--done");
 
-    for (let i = 0; i < cards.length; i++) {
-      cardsWon.push(cards[i].dataset.number);
+    if (finishedCards.length === 0) {
+      localStorage.removeItem("bingo");
     }
 
-    if (cards.length === 0) {
-      localStorage.removeItem("bingo");
+    for (let i = 0; i < finishedCards.length; i++) {
+      cardsWon.push(finishedCards[i].dataset.number);
     }
 
     localStorage.setItem("bingo", JSON.stringify(cardsWon)); //https://www.geeksforgeeks.org/javascript-json-stringify-method/
