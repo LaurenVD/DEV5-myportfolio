@@ -1,5 +1,7 @@
 # Lab 2
 
+Codesandbox: (https://codesandbox.io/s/r14oqs)
+
 ## JavaScript Numeric Separator
 
 De ```numeric seperator``` is een nieuwe feature die in ES2021 erbij is gekomen. Het maakt het je makkelijker om een lange en grote getallen te lezen door het gebruik van een underscore (_) als seperator. Dit is een voorbeeld van een getal zonder een seperator:
