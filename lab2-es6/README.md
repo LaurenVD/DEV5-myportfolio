@@ -1,6 +1,6 @@
 # Lab 2
 
-Codesandbox: (https://codesandbox.io/s/r14oqs)
+Codesandbox: (https://codesandbox.io/s/brave-banzai-e9otdh?file=/js/card.js)
 
 ## JavaScript Numeric Separator
 
