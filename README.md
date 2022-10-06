@@ -6,3 +6,4 @@ Labo's
 
 - Link to lab1: https://github.com/marianneneuts/DEV5-LAB1.git
 - Link to lab2 :https://github.com/LaurenVD/DEV5-myportfolio/tree/main/lab2-es6
+- Link to lab3: https://github.com/LaurenVD/DEV5-myportfolio/tree/main/lab3-api
