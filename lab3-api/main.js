@@ -11,12 +11,16 @@ const meal = new Meal();
 const mealImage = document.querySelector(".meal__image");
 
 if (weather.temp > 10) {
-    meal.getMealByName("chicken").then((data) => {
+    meal.getMealByName("soup").then((data) => {
         console.log(data);
         mealImage.src = data.strMealThumb;
     });
-}
-else {
+} else if (weather.temp > 10, weather.temp < 20) {
+    meal.getMealByName("spaghetti").then((data) => {
+        console.log(data);
+        mealImage.src = data.strMealThumb;
+    });
+} else {
     meal.getMealByName("salad").then((data) => {
         console.log(data, mealImage);
         mealImage.src = data.strMealThumb;
