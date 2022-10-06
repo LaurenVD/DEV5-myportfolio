@@ -18,7 +18,7 @@ h1 {
 }
 
 .company__icon {
-    width: 20%;
+    width: 15%;
     position: relative;
     top: 142px;
     left: 240px;
@@ -28,7 +28,7 @@ h1 {
 .meal__image {
     top: 20px;
     z-index: -1;
-    width: 50%;
+    width: 30%;
     border-radius: 12px;
     position: absolute;
 }
