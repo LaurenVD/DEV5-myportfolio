@@ -48,10 +48,10 @@ export default class Weather {
 
     displayWeather(data) {
         const temp = data.current.temp_c;
-        document.querySelector(".weather__temp").innerText = temp + "°C";
+        document.querySelector(".weather__temp").innerText = "It's " + temp + "°C outside!";
 
         const weather = data.current.condition.text;
-        document.querySelector(".weather__summary").innerText = weather;
+        document.querySelector(".weather__summary").innerText = "Omg it's " + weather;
 
         const icon = data.current.condition.icon;
         //create an image element
