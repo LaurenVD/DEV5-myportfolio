@@ -48,7 +48,7 @@ export default class Weather {
 
     displayWeather(data) {
         const temp = data.current.temp_c;
-        document.querySelector(".weather__temp").innerText = "It's " + temp + "°C outside!";
+        document.querySelector(".weather__temp").innerText = "It's " + temp + "°C outside! We suggest to eat...";
 
         const weather = data.current.condition.text;
         document.querySelector(".weather__summary").innerText = "Omg it's " + weather;
