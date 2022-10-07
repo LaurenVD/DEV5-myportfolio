@@ -59,5 +59,30 @@ export default class Weather {
         img.src = icon;
         //append the image to the weather__icon div
         document.querySelector(".weather__icon").appendChild(img);
+
+        const mealImage = document.querySelector(".meal__image");
+
+        if (temp <= 10) {
+            this.getMealByName("soup").then((data) => {
+                mealImage.src = data.strMealThumb;
+            });
+         }
+         else if (temp > 10, temp <= 20) {
+            this.getMealByName("spaghetti").then((data) => {
+                mealImage.src = data.strMealThumb;
+            });
+        }
+         else {
+            this.getMealByName("salad").then((data) => {
+                mealImage.src = data.strMealThumb;
+            });
+        };
+    }
+
+    async getMealByName(name) {
+        const MEAL_URI = "https://www.themealdb.com/api/json/v1/1/";
+        const response = await fetch(`${MEAL_URI}search.php?s=${name}`);
+        const data = await response.json();
+        return data.meals[1];
     }
 }
