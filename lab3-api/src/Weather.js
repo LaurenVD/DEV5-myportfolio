@@ -1,5 +1,3 @@
-import Meal from './Meal.js'
-
 export default class Weather {
     constructor(api_key) {
         this.apiKey = api_key;
@@ -79,5 +77,12 @@ export default class Weather {
                 mealImage.src = data.strMealThumb;
             });
         };
+    }
+
+    async getMealByName(name) {
+        const MEAL_URI = "https://www.themealdb.com/api/json/v1/1/";
+        const response = await fetch(`${MEAL_URI}search.php?s=${name}`);
+        const data = await response.json();
+        return data.meals[1];
     }
 }
