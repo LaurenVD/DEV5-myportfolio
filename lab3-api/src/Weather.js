@@ -1,3 +1,5 @@
+import Meal from './Meal.js'
+
 export default class Weather {
     constructor(api_key) {
         this.apiKey = api_key;
@@ -59,5 +61,23 @@ export default class Weather {
         img.src = icon;
         //append the image to the weather__icon div
         document.querySelector(".weather__icon").appendChild(img);
+
+        const mealImage = document.querySelector(".meal__image");
+
+        if (temp <= 10) {
+            this.getMealByName("soup").then((data) => {
+                mealImage.src = data.strMealThumb;
+            });
+         }
+         else if (temp > 10, temp <= 20) {
+            this.getMealByName("spaghetti").then((data) => {
+                mealImage.src = data.strMealThumb;
+            });
+        }
+         else {
+            this.getMealByName("salad").then((data) => {
+                mealImage.src = data.strMealThumb;
+            });
+        };
     }
 }
