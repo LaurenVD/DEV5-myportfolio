@@ -55,6 +55,14 @@ wallLeftMesh.rotation.y = Math.PI/2;
 wallLeftMesh.position.z = 1;
 scene.add( wallLeftMesh );
 
+const roof = new THREE.ConeGeometry( 1.5, 1, 4 );
+const roofMaterial = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+const roofMesh = new THREE.Mesh( roof, roofMaterial );
+roofMesh.position.y = 1.5;
+roofMesh.rotation.y = Math.PI/4;
+roofMesh.position.z = 1;
+scene.add( roofMesh );
+
 camera.position.z = 5;
 
 function animate() {
