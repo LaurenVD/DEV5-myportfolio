@@ -37,6 +37,10 @@ const nameTexture = textureloaderName.load('/textures/nametexture.png');
 const textureloaderGrass = new THREE.TextureLoader();
 const grassTexture = textureloaderGrass.load('/textures/grasstexture.jpg');
 
+// texture loader
+const textureloaderCloud = new THREE.TextureLoader();
+const cloudTexture = textureloaderCloud.load('/textures/cloudtexture.jpg');
+
 const wallBack = new THREE.PlaneGeometry(2, 2, 2);
 const wallBackMaterial = new THREE.MeshBasicMaterial( {color: 0xaaaaaa} );
 wallBackMaterial.map = wallTexture;
@@ -132,8 +136,15 @@ const grassMesh = new THREE.Mesh( grass, grassMaterial );
 grassMesh.rotation.x = Math.PI/2;
 // move the box
 grassMesh.position.y = -1;
-
 scene.add( grassMesh );
+
+// create sphere
+const sphere = new THREE.SphereGeometry( 100, 32, 32 );
+const sphereMaterial = new THREE.MeshBasicMaterial( {color: 0xaaaaaa} );
+sphereMaterial.map = cloudTexture;
+sphereMaterial.side = THREE.DoubleSide;
+const sphereMesh = new THREE.Mesh( sphere, sphereMaterial );
+scene.add( sphereMesh );
 
 camera.position.z = 5;
 
