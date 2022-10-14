@@ -25,6 +25,10 @@ const controls = new OrbitControls( camera, renderer.domElement );
 const textureloader = new THREE.TextureLoader();
 const wallTexture = textureloader.load('/textures/walltexture.jpg');
 
+// texture loader
+const textureloaderRoof = new THREE.TextureLoader();
+const roofTexture = textureloaderRoof.load('/textures/rooftexture.jpg');
+
 const wallBack = new THREE.PlaneGeometry(2, 2, 2);
 const wallBackMaterial = new THREE.MeshBasicMaterial( {color: 0xaaaaaa} );
 wallBackMaterial.map = wallTexture;
@@ -65,7 +69,8 @@ wallLeftMesh.position.z = 1;
 scene.add( wallLeftMesh );
 
 const roof = new THREE.ConeGeometry( 1.5, 1, 4 );
-const roofMaterial = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+const roofMaterial = new THREE.MeshBasicMaterial( {color: 0xaaaaaa} );
+roofMaterial.map = roofTexture;
 const roofMesh = new THREE.Mesh( roof, roofMaterial );
 roofMesh.position.y = 1.5;
 roofMesh.rotation.y = Math.PI/4;
@@ -80,6 +85,15 @@ chimneyMesh.position.x = -0.7;
 chimneyMesh.position.y = 1.5;
 chimneyMesh.position.z = 1;
 scene.add( chimneyMesh );
+
+// create box
+const raam = new THREE.BoxGeometry(1, 0.5, 0.1);
+const raamMaterial = new THREE.MeshBasicMaterial( { color: 0xBCD2E8 } );
+const raamMesh = new THREE.Mesh( raam, raamMaterial );
+raamMesh.position.x = -0.5;
+raamMesh.position.y = 0.5;
+raamMesh.position.z = 2;
+scene.add( raamMesh );
 
 camera.position.z = 5;
 
