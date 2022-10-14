@@ -166,11 +166,10 @@ for (let i = 0; i < 10; i++) {
 camera.position.z = 5;
 
 function animate() {
-	requestAnimationFrame( animate );
+  camera.position.y = Math.sin(Date.now() / 1000) * 0.5;
 
-	//cube.rotation.x += 0.01;
-	//cube.rotation.y += 0.01;
-
+  requestAnimationFrame( animate );
+  controls.update();
 	renderer.render( scene, camera );
 };
 
