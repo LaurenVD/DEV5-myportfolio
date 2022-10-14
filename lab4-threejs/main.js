@@ -95,6 +95,15 @@ raamMesh.position.y = 0.5;
 raamMesh.position.z = 2;
 scene.add( raamMesh );
 
+// creat door as box
+const door = new THREE.BoxGeometry(0.5, 1, 0.1);
+const doorMaterial = new THREE.MeshBasicMaterial( { color: 0x8B4513 } );
+const doorMesh = new THREE.Mesh( door, doorMaterial );
+doorMesh.position.x = 0.5;
+doorMesh.position.y = -0.5;
+doorMesh.position.z = 2;
+scene.add( doorMesh );
+
 camera.position.z = 5;
 
 function animate() {
