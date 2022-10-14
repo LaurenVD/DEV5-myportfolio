@@ -54,7 +54,6 @@ wallLeftMesh.rotation.y = Math.PI/2;
 wallLeftMesh.position.z = 1;
 scene.add( wallLeftMesh );
 
-
 camera.position.z = 5;
 
 function animate() {
