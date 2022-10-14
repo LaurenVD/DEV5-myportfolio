@@ -73,7 +73,8 @@ roofMesh.position.z = 1;
 scene.add( roofMesh );
 
 const chimney = new THREE.CylinderGeometry( 0.2, 0.2, 1, 32 );
-const chimneyMaterial = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+const chimneyMaterial = new THREE.MeshBasicMaterial( {color: 0xaaaaaa} );
+chimneyMaterial.map = wallTexture;
 const chimneyMesh = new THREE.Mesh( chimney, chimneyMaterial );
 chimneyMesh.position.x = -0.7;
 chimneyMesh.position.y = 1.5;
