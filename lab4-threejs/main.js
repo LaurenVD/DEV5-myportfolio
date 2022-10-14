@@ -45,7 +45,8 @@ wallRightMesh.position.z = 1;
 scene.add( wallRightMesh );
 
 const wallFront = new THREE.PlaneGeometry(2, 2, 2);
-const wallFrontMaterial = new THREE.MeshBasicMaterial( {color: 0xff0000} );
+const wallFrontMaterial = new THREE.MeshBasicMaterial( {color: 0xaaaaaa} );
+wallFrontMaterial.map = wallTexture;
 // show both sides of the plane (back and front)
 wallFrontMaterial.side = THREE.DoubleSide;
 const wallFrontMesh = new THREE.Mesh( wallFront, wallFrontMaterial );
@@ -53,7 +54,8 @@ wallFrontMesh.position.z = 2;
 scene.add( wallFrontMesh );
 
 const wallLeft = new THREE.PlaneGeometry(2, 2, 2);
-const wallLeftMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+const wallLeftMaterial = new THREE.MeshBasicMaterial( {color: 0xaaaaaa} );
+wallLeftMaterial.map = wallTexture;
 // show both sides of the plane (back and front)
 wallLeftMaterial.side = THREE.DoubleSide;
 const wallLeftMesh = new THREE.Mesh( wallLeft, wallLeftMaterial );
