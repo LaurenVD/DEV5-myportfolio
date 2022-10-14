@@ -29,6 +29,10 @@ const wallTexture = textureloader.load('/textures/walltexture.jpg');
 const textureloaderRoof = new THREE.TextureLoader();
 const roofTexture = textureloaderRoof.load('/textures/rooftexture.jpg');
 
+// texture loader
+const textureloaderName = new THREE.TextureLoader();
+const nameTexture = textureloaderName.load('/textures/nametexture.png');
+
 const wallBack = new THREE.PlaneGeometry(2, 2, 2);
 const wallBackMaterial = new THREE.MeshBasicMaterial( {color: 0xaaaaaa} );
 wallBackMaterial.map = wallTexture;
@@ -103,6 +107,17 @@ doorMesh.position.x = 0.5;
 doorMesh.position.y = -0.5;
 doorMesh.position.z = 2;
 scene.add( doorMesh );
+
+// create box
+const cube = new THREE.BoxGeometry(1.5, 0.5, 0.1);
+const cubeMaterial = new THREE.MeshBasicMaterial( { color: 0xaaaaaa } );
+cubeMaterial.map = nameTexture;
+const cubeMesh = new THREE.Mesh( cube, cubeMaterial );
+cubeMesh.position.x = 1;
+cubeMesh.position.y = -0.7;
+cubeMesh.position.z = 1;
+cubeMesh.rotation.y = Math.PI/2;
+scene.add( cubeMesh );
 
 camera.position.z = 5;
 
