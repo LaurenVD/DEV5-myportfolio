@@ -34,7 +34,8 @@ const wallBackMesh = new THREE.Mesh( wallBack, wallBackMaterial );
 scene.add( wallBackMesh );
 
 const wallRight = new THREE.PlaneGeometry(2, 2, 2);
-const wallRightMaterial = new THREE.MeshBasicMaterial( {color: 0x0000ff} );
+const wallRightMaterial = new THREE.MeshBasicMaterial( {color: 0xaaaaaa} );
+wallRightMaterial.map = wallTexture;
 // show both sides of the plane (back and front)
 wallRightMaterial.side = THREE.DoubleSide;
 const wallRightMesh = new THREE.Mesh( wallRight, wallRightMaterial );
