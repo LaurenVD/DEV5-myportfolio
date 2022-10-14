@@ -5,6 +5,8 @@ import * as THREE from 'three';
 //import orbit controls
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { Material } from 'three';
+// import gltf loader
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -145,6 +147,21 @@ sphereMaterial.map = cloudTexture;
 sphereMaterial.side = THREE.DoubleSide;
 const sphereMesh = new THREE.Mesh( sphere, sphereMaterial );
 scene.add( sphereMesh );
+
+let createFlower = (x, y, z) => {
+  const loader = new GLTFLoader();
+  loader.load('/textures/model/scene.gltf', function ( gltf ) {
+    gltf.scene.scale.set(0.01, 0.01, 0.01);
+    gltf.scene.position.set(x,-1, z);
+    scene.add( gltf.scene );
+  }, undefined, function ( error ) {
+    console.error( error );
+  });
+}
+
+// add flower to scene
+createFlower(2, 2);
+createFlower(3,3);
 
 camera.position.z = 5;
 
