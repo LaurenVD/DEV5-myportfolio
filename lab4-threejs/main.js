@@ -26,6 +26,35 @@ wallBackMaterial.side = THREE.DoubleSide;
 const wallBackMesh = new THREE.Mesh( wallBack, wallBackMaterial );
 scene.add( wallBackMesh );
 
+const wallRight = new THREE.PlaneGeometry(2, 2, 2);
+const wallRightMaterial = new THREE.MeshBasicMaterial( {color: 0x0000ff} );
+// show both sides of the plane (back and front)
+wallRightMaterial.side = THREE.DoubleSide;
+const wallRightMesh = new THREE.Mesh( wallRight, wallRightMaterial );
+wallRightMesh.position.x = 1;
+wallRightMesh.rotation.y = Math.PI/2;
+wallRightMesh.position.z = 1;
+scene.add( wallRightMesh );
+
+const wallFront = new THREE.PlaneGeometry(2, 2, 2);
+const wallFrontMaterial = new THREE.MeshBasicMaterial( {color: 0xff0000} );
+// show both sides of the plane (back and front)
+wallFrontMaterial.side = THREE.DoubleSide;
+const wallFrontMesh = new THREE.Mesh( wallFront, wallFrontMaterial );
+wallFrontMesh.position.z = 2;
+scene.add( wallFrontMesh );
+
+const wallLeft = new THREE.PlaneGeometry(2, 2, 2);
+const wallLeftMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+// show both sides of the plane (back and front)
+wallLeftMaterial.side = THREE.DoubleSide;
+const wallLeftMesh = new THREE.Mesh( wallLeft, wallLeftMaterial );
+wallLeftMesh.position.x = -1;
+wallLeftMesh.rotation.y = Math.PI/2;
+wallLeftMesh.position.z = 1;
+scene.add( wallLeftMesh );
+
+
 camera.position.z = 5;
 
 function animate() {
