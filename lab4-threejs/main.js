@@ -159,9 +159,9 @@ let createFlower = (x, y, z) => {
   });
 }
 
-// add flower to scene
-createFlower(2, 2);
-createFlower(3,3);
+for (let i = 0; i < 10; i++) {
+  createFlower(Math.random()*10-5, 0, Math.random()*10-5);
+}
 
 camera.position.z = 5;
 
