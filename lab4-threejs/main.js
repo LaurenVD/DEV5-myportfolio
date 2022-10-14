@@ -63,6 +63,14 @@ roofMesh.rotation.y = Math.PI/4;
 roofMesh.position.z = 1;
 scene.add( roofMesh );
 
+const chimney = new THREE.CylinderGeometry( 0.2, 0.2, 1, 32 );
+const chimneyMaterial = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+const chimneyMesh = new THREE.Mesh( chimney, chimneyMaterial );
+chimneyMesh.position.x = -0.7;
+chimneyMesh.position.y = 1.5;
+chimneyMesh.position.z = 1;
+scene.add( chimneyMesh );
+
 camera.position.z = 5;
 
 function animate() {
