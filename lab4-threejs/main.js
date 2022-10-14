@@ -4,6 +4,7 @@ import javascriptLogo from './javascript.svg'
 import * as THREE from 'three';
 //import orbit controls
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { Material } from 'three';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -20,8 +21,13 @@ scene.add( light );
 //ORBIT CONTROLS
 const controls = new OrbitControls( camera, renderer.domElement );
 
+// texture loader
+const textureloader = new THREE.TextureLoader();
+const wallTexture = textureloader.load('/textures/walltexture.jpg');
+
 const wallBack = new THREE.PlaneGeometry(2, 2, 2);
-const wallBackMaterial = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+const wallBackMaterial = new THREE.MeshBasicMaterial( {color: 0xaaaaaa} );
+wallBackMaterial.map = wallTexture;
 // show both sides of the plane (back and front)
 wallBackMaterial.side = THREE.DoubleSide;
 const wallBackMesh = new THREE.Mesh( wallBack, wallBackMaterial );
